@@ -1,7 +1,10 @@
-import Fastify from "fastify"
+import Fastify from 'fastify'
+import cors from '@fastify/cors'
 import { PrismaClient } from '@prisma/client'
 
 const app = Fastify()
+app.register(cors)
+
 const prisma = new PrismaClient()
 
 app.get("/hello", async() => {
